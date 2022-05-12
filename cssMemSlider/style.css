@@ -47,6 +47,18 @@ h1 {
   z-index: 10;
   opacity: 1;
 }
+.slider__img-wrapper:target:nth-of-type(1) ~ .slider__nav a:nth-of-type(1) {
+  outline: 0.0625rem solid #668c95;
+}
+.slider__img-wrapper:target:nth-of-type(2) ~ .slider__nav a:nth-of-type(2) {
+  outline: 0.0625rem solid #668c95;
+}
+.slider__img-wrapper:target:nth-of-type(3) ~ .slider__nav a:nth-of-type(3) {
+  outline: 0.0625rem solid #668c95;
+}
+.slider__img-wrapper:target:nth-of-type(4) ~ .slider__nav a:nth-of-type(4) {
+  outline: 0.0625rem solid #668c95;
+}
 .slider__img {
   display: block;
   width: 100%;
@@ -61,6 +73,7 @@ h1 {
   grid-row-start: 2;
   margin: 0;
   min-height: 4.375rem;
+  padding: 0 0.625rem;
   font-size: 1rem;
   background-color: inherit;
 }
@@ -68,14 +81,26 @@ h1 {
   grid-column-start: 2;
   grid-row-start: 2;
   justify-self: end;
+  padding: 0 0.625rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.625rem;
 }
 .slider__nav-btn {
   display: block;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
-  background-color: green;
+  background-color: #b3b3b3;
+  outline: 0.0625rem solid #fff;
+  padding: 0.75rem;
   cursor: pointer;
+  background-clip: content-box;
+}
+.slider__nav-btn:hover {
+  background-color: green;
+}
+.slider__nav-btn:active {
+  background-color: blue;
 }
