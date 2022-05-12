@@ -11,7 +11,7 @@ h1 {
 .slider {
   width: 100%;
   overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #e6e6e6;
 }
 .slider__container {
   display: grid;
@@ -21,11 +21,31 @@ h1 {
   max-width: 53.75rem;
   margin: 0 auto;
   border: 1px solid #000;
+  background-color: inherit;
+}
+.slider__img-wrapper:nth-of-type(1):not(:target) {
+  z-index: 10;
+  opacity: 1;
+}
+.slider__img-wrapper:nth-of-type(1):not(:target) + .slider__desc {
+  z-index: 10;
+  opacity: 1;
 }
 .slider__img-wrapper {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
   grid-column: 1/span 2;
   grid-row: 1;
   height: 400px;
+}
+.slider__img-wrapper:target {
+  z-index: 10;
+  opacity: 1;
+}
+.slider__img-wrapper:target + .slider__desc {
+  z-index: 10;
+  opacity: 1;
 }
 .slider__img {
   display: block;
@@ -34,15 +54,28 @@ h1 {
   object-fit: cover;
 }
 .slider__desc {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
   grid-column-start: 1;
   grid-row-start: 2;
   margin: 0;
   min-height: 70px;
   font-size: 1rem;
+  background-color: inherit;
 }
 .slider__nav {
   grid-column-start: 2;
   grid-row-start: 2;
   justify-self: end;
   display: flex;
+  gap: 10px;
+}
+.slider__nav-btn {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  cursor: pointer;
 }
