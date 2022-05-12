@@ -23,6 +23,12 @@ h1 {
   border: 0.0625rem solid #000;
   background-color: inherit;
 }
+@media screen and (max-width: 900px) {
+  .slider__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+}
 .slider__img-wrapper:nth-of-type(1):not(:target) {
   z-index: 10;
   opacity: 1;
@@ -38,6 +44,14 @@ h1 {
   grid-column: 1/span 2;
   grid-row: 1;
   height: 25rem;
+}
+@media screen and (max-width: 900px) {
+  .slider__img-wrapper {
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 800/400;
+  }
 }
 .slider__img-wrapper:target {
   z-index: 10;
@@ -74,8 +88,16 @@ h1 {
   margin: 0;
   min-height: 4.375rem;
   padding: 0 0.625rem;
+  padding-bottom: 1.25rem;
+  box-sizing: border-box;
   font-size: 1rem;
   background-color: inherit;
+}
+@media screen and (max-width: 900px) {
+  .slider__desc {
+    grid-row-start: 3;
+    min-height: 3.125rem;
+  }
 }
 .slider__nav {
   grid-column-start: 2;
@@ -86,6 +108,13 @@ h1 {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.625rem;
+}
+@media screen and (max-width: 900px) {
+  .slider__nav {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    justify-self: center;
+  }
 }
 .slider__nav-btn {
   display: block;
