@@ -7,6 +7,9 @@ body {
 h1 {
   text-align: center;
 }
+h1 span {
+  color: #5de0ff;
+}
 
 .slider {
   width: 100%;
