@@ -30,17 +30,14 @@ h1 {
   }
 }
 .slider__img-wrapper:nth-of-type(1):not(:target) {
-  z-index: 10;
-  opacity: 1;
+  z-index: 5;
 }
 .slider__img-wrapper:nth-of-type(1):not(:target) + .slider__desc {
-  z-index: 10;
-  opacity: 1;
+  z-index: 5;
 }
 .slider__img-wrapper {
   position: relative;
   z-index: -1;
-  opacity: 0;
   grid-column: 1/span 2;
   grid-row: 1;
   height: 25rem;
@@ -55,23 +52,41 @@ h1 {
 }
 .slider__img-wrapper:target {
   z-index: 10;
-  opacity: 1;
+}
+.slider__img-wrapper:target > img {
+  animation: fade-in 1000ms forwards;
 }
 .slider__img-wrapper:target + .slider__desc {
   z-index: 10;
-  opacity: 1;
+  animation: text-fade-in 2300ms forwards;
 }
 .slider__img-wrapper:target:nth-of-type(1) ~ .slider__nav a:nth-of-type(1) {
-  outline: 0.0625rem solid #668c95;
+  outline: 0.0625rem solid #5de0ff;
+  background-color: #5de0ff;
 }
 .slider__img-wrapper:target:nth-of-type(2) ~ .slider__nav a:nth-of-type(2) {
-  outline: 0.0625rem solid #668c95;
+  outline: 0.0625rem solid #5de0ff;
+  background-color: #5de0ff;
+}
+.slider__img-wrapper:target:nth-of-type(2) ~ .slider__nav a:nth-of-type(1) {
+  outline: 0.0625rem solid #fff;
+  background-color: #fff;
 }
 .slider__img-wrapper:target:nth-of-type(3) ~ .slider__nav a:nth-of-type(3) {
-  outline: 0.0625rem solid #668c95;
+  outline: 0.0625rem solid #5de0ff;
+  background-color: #5de0ff;
+}
+.slider__img-wrapper:target:nth-of-type(3) ~ .slider__nav a:nth-of-type(1) {
+  outline: 0.0625rem solid #fff;
+  background-color: #fff;
 }
 .slider__img-wrapper:target:nth-of-type(4) ~ .slider__nav a:nth-of-type(4) {
-  outline: 0.0625rem solid #668c95;
+  outline: 0.0625rem solid #5de0ff;
+  background-color: #5de0ff;
+}
+.slider__img-wrapper:target:nth-of-type(4) ~ .slider__nav a:nth-of-type(1) {
+  outline: 0.0625rem solid #fff;
+  background-color: #fff;
 }
 .slider__img {
   display: block;
@@ -82,7 +97,6 @@ h1 {
 .slider__desc {
   position: relative;
   z-index: -1;
-  opacity: 0;
   grid-column-start: 1;
   grid-row-start: 2;
   margin: 0;
@@ -121,15 +135,44 @@ h1 {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  background-color: #b3b3b3;
+  background-color: #fff;
   outline: 0.0625rem solid #fff;
   padding: 0.75rem;
   cursor: pointer;
   background-clip: content-box;
+  transition: all 300ms;
 }
 .slider__nav-btn:hover {
-  background-color: green;
+  background-color: #5de0ff;
 }
 .slider__nav-btn:active {
-  background-color: blue;
+  background-color: #b3b3b3;
+  animation: none;
+}
+.slider__nav-btn:nth-of-type(1) {
+  outline: 0.0625rem solid #5de0ff;
+  background-color: #5de0ff;
+}
+.slider__nav-btn:nth-of-type(1):hover {
+  background-color: #5de0ff !important;
+}
+.slider__nav-btn:nth-of-type(1):active {
+  background-color: #b3b3b3 !important;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes text-fade-in {
+  from {
+    color: transparent;
+  }
+  to {
+    color: inherit;
+  }
 }
